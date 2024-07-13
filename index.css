@@ -1,0 +1,897 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styles */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  left: 30px;
+  top: 4px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  flex: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 40px 10px 30px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header-links span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Main banner styles */
+.main-banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.main-banner img {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.banner-text h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+/* Main navigation styles */
+.main-nav {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.main-nav ul li {
+  display: inline;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+  position: relative;
+}
+
+.main-nav ul li a:hover {
+  text-decoration: none;
+}
+
+.main-nav ul li a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+}
+
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.nav-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-actions .join-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Posts styles */
+.posts {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post img {
+  width: 100%;
+  height: auto;
+}
+
+.post-content {
+  padding: 20px;
+}
+
+.post-content h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.post-content h3 {
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.post-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-author img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-location {
+  display: none;
+}
+
+.share-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (min-width: 600px) {
+  .post-location {
+    display: inline;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.top-banner {
+  background-color: #e0f7e9;
+  padding: 10px;
+  text-align: center;
+}
+
+.top-banner p {
+  margin: 0;
+  color: #333;
+}
+
+.top-banner a {
+  color: #28a745;
+  text-decoration: none;
+}
+
+.signin-container {
+  display: flex;
+  padding: 20px;
+}
+
+.form-container {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signin-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.signin-button:hover {
+  background-color: #0056b3;
+}
+
+.social-signin button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.facebook-button {
+  background-color: #3b5998;
+  color: white;
+}
+
+.google-button {
+  background-color: #db4437;
+  color: white;
+}
+
+.forgot-password {
+  color: #007bff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.signup-prompt {
+  flex: 1;
+  text-align: center;
+}
+
+.signup-prompt p {
+  margin-top: 0;
+}
+
+.signup-prompt a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-prompt img {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+
+  .header-links span{
+    white-space: nowrap;
+    position: relative;
+    right: 50px;
+
+  }
+     /* Sign In Modal */
+     .signin-container {
+      padding: 10px;
+  }
+
+  .form-container {
+      width: 100%;
+  }
+
+  .form-container form {
+      width: 100%;
+  }
+
+  .form-container label {
+      font-size: 14px;
+  }
+
+  .form-container input[type="email"],
+  .form-container input[type="password"] {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  .signin-button {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  .social-signin button {
+      padding: 8px;
+      font-size: 14px;
+      margin-top: 8px;
+  }
+
+  .forgot-password {
+      font-size: 12px;
+  }
+
+  .signup-prompt {
+      font-size: 14px;
+  }
+
+  .signup-prompt img {
+      width: 100%;
+  }
+  
+
+  .banner-text {
+    font-size: 11px; /* Adjust font size for smaller screens */
+  }
+
+  .banner-text p {
+    font-size: 10px; /* Adjust paragraph font size for smaller screens */
+  }
+  .background{
+    width: 100%;
+  }
+
+  .search-bar{
+    display: none;
+  }
+
+  .header-links{
+    width: 30%;
+  }
+
+  .logo{
+    width: 70%;
+  }
+
+  .show-buttons .account-buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure buttons appear above other content */
+  }
+
+  .free-text {
+    cursor: pointer;
+  }
+
+  
+
+
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Top banner adjustments for smaller screens */
+@media (max-width: 600px) {
+
+
+  .top-banner {
+    padding: 5px; /* Reduce padding for smaller screens */
+  }
+  
+  .top-banner p {
+    font-size: 12px; /* Further reduce font size for smaller screens */
+  }
+}
+
+.account-buttons {
+  display: none; /* Initially hide the buttons */
+}
+
+.show-buttons .account-buttons {
+  display: flex; /* Show the buttons when this class is applied */
+  gap: 10px;
+}
+
+
+@media screen and (max-width: 331px) {
+  .logo{
+    position: relative;
+    bottom: 40px
+
+  }
+
+  .banner-text h1{
+    font-size: 10px;
+  }
+
+
+  .banner-text p{
+    font-size: 7px;
+  }
+
+  
+}
+
+
+
+
+/* Style for the free-text link */
+.free-text {
+  position: relative;
+  right: 5px;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Button base styles */
+.account-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Sign In button */
+#signInBtn {
+  background-color: #007bff;
+  color: white;
+}
+
+#signInBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Create Account button */
+#createAccountBtn {
+  background-color: #28a745;
+  color: white;
+}
+
+#createAccountBtn:hover {
+  background-color: #218838;
+}
+
+
+/* Create Account Modal Styles */
+/* Base styles for create account modal */
+#createAccountModal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#createAccountModal .create-account-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  margin: 10px;
+  text-align: center;
+}
+
+#createAccountModal .create-account-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#createAccountModal .create-account-close:hover {
+  color: black;
+}
+
+#createAccountModal .create-account-top-banner {
+  background-color: #e0f7e9;
+  padding: 10px;
+}
+
+#createAccountModal .create-account-top-banner p {
+  margin: 0;
+  color: #333;
+}
+
+#createAccountModal .create-account-top-banner a {
+  color: #28a745;
+  text-decoration: none;
+}
+
+#createAccountModal .create-account-form-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+#createAccountModal .create-account-form-content {
+  flex: 1 1 300px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#createAccountModal .create-account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#createAccountModal .create-account-name-field {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#createAccountModal input[type="text"],
+#createAccountModal input[type="email"],
+#createAccountModal input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#createAccountModal button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#createAccountModal button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#createAccountModal .create-account-social-button {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#createAccountModal .create-account-facebook-button {
+  background-color: #3b5998;
+  color: white;
+}
+
+#createAccountModal .create-account-google-button {
+  background-color: #db4437;
+  color: white;
+}
+
+#createAccountModal .create-account-illustration {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#createAccountModal .create-account-illustration img {
+  max-width: 100%;
+  height: auto;
+}
+
+#createAccountModal .create-account-signin-prompt p {
+  margin: 5px 0;
+  color: #333;
+}
+
+#createAccountModal .create-account-signin-prompt a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#createAccountModal .create-account-signin-prompt a:hover {
+  text-decoration: underline;
+}
+
+
+@media (min-width: 323px) and (max-width: 678px) {
+
+  .create-account-signin-prompt{
+    position: relative;
+    bottom: 10px;
+  }
+  .create-account-form-content{
+    position: relative;
+    top: 30px;
+  }
+
+  .create-account-top-banner {
+    position: relative;
+    top: 25px;
+  }
+  .create-account-illustration img{
+    display: none;
+  }
+}
+
+@media (min-width: 226px) and (max-width: 321px){
+  .create-account-signin-prompt{
+    position: relative;
+    bottom: 10px;
+  }
+  .create-account-form-content{
+    position: relative;
+    top: 30px;
+  }
+
+  .create-account-top-banner {
+    position: relative;
+    top: 25px;
+  }
+  .create-account-illustration img{
+    display: none;
+  }
+}
+
+
+@media(max-width: 450px){
+  .create-text{
+    font-weight: 300;
+  }
+  .logo img{
+    position: relative;
+    left: 60px;
+  }
+  .header-links span{
+    white-space: nowrap;
+    position: relative;
+    top: 267px;
+    right: 180px;
+    font-size: 15px;
+
+  }
+
+  /* .header-links .create-text{
+    height: 80px;
+
+
+  } */
+}
+/* Responsive styles for smaller devices */
+@media (max-width: 600px) {
+
+
+
+
+  #createAccountModal .create-account-modal-content {
+    width: 95%;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #createAccountModal .create-account-form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #createAccountModal .create-account-form-content,
+  #createAccountModal .create-account-illustration {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  #createAccountModal .create-account-modal-content {
+    padding: 10px;
+  }
+
+  #createAccountModal .create-account-close {
+    font-size: 20px;
+  }
+
+  #createAccountModal .create-account-top-banner p {
+    font-size: 12px;
+  }
+
+  #createAccountModal .create-account-form-container {
+    padding: 0;
+  }
+
+  #createAccountModal input[type="text"],
+  #createAccountModal input[type="email"],
+  #createAccountModal input[type="password"] {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #createAccountModal button[type="submit"] {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #createAccountModal .create-account-social-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #createAccountModal .create-account-illustration img {
+    max-width: 80%;
+  }
+
+  #createAccountModal .create-account-signin-prompt p {
+    font-size: 12px;
+  }
+
+  #createAccountModal .create-account-top-banner p {
+    font-size: 10px;
+  }
+
+  #createAccountModal .create-account-form-content {
+    margin-bottom: 15px;
+  }
+
+  #createAccountModal .create-account-illustration {
+    margin-bottom: 15px;
+  }
+}
+
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 1px 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #555;
+  border-top: 2px solid #ddd;
+}
